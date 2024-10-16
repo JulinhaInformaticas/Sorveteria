@@ -16,12 +16,6 @@ namespace Sorveteria
         {
             InitializeComponent();
         }
-
-        private void Tela_cadastro_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             //adicionar código de imagem 
