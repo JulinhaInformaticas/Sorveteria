@@ -174,6 +174,7 @@
             this.btn_cadastrarprod.TabIndex = 14;
             this.btn_cadastrarprod.Text = "CADASTRAR";
             this.btn_cadastrarprod.UseVisualStyleBackColor = true;
+            this.btn_cadastrarprod.Click += new System.EventHandler(this.btn_cadastrarprod_Click);
             // 
             // Tela_cadastro
             // 
@@ -198,7 +199,6 @@
             this.Controls.Add(this.lbl_cod);
             this.Name = "Tela_cadastro";
             this.Text = "Tela_cadastro";
-            this.Load += new System.EventHandler(this.Tela_cadastro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

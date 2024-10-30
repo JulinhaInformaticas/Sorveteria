@@ -20,7 +20,9 @@ namespace Sorveteria.CONTROLLER
             string StringConnection = @"Data Source = " + Server
             + "; Initial Catalog = " + DataBase
             + "; User Id = " + Username
+            + "; Password = " + Password
             + "; Encrypt = false";
+            
 
             con = new SqlConnection(StringConnection);
             con.Open(); //abre conexão com o banco

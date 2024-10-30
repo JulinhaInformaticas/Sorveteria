@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="CONTROLLER\Connection.cs" />
     <Compile Include="MODEL\Cad_produtos.cs" />
+    <Compile Include="MODEL\Cad_produtosDAO.cs" />
     <Compile Include="VIEW\Cadastro_fun.cs">
       <SubType>Form</SubType>
     </Compile>

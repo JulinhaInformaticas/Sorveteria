@@ -12,13 +12,22 @@ namespace Sorveteria.MODEL
         public string NomeProduto { get; set; }
         public float Preco { get; set; }
         public string Descricao { get; set; }
+        public string UniMedida { get; set; }
+
+
+        public Cad_produtos( int codProduto, string nomeProduto,
+            string descricao, float preco, string uniMedida) : this (nomeProduto, descricao, preco, uniMedida)
+        {
+            CodProduto = codProduto;
+        }
 
         public Cad_produtos( string nomeProduto,
-            string descricao, float preco) 
+            string descricao, float preco, string uniMedida)
         {
             NomeProduto = nomeProduto;
             Descricao = descricao;
             Preco = preco;
+            UniMedida = uniMedida;
         }
     }
 }
