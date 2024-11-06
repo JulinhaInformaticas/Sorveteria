@@ -11,7 +11,7 @@ namespace Sorveteria.MODEL
 {
     internal class Cad_produtosDAO
     {
-        private Connection Connect {  get; set; }
+        private Connection Connect { get; set; }
         private SqlCommand Command { get; set; }
 
         public Cad_produtosDAO() //metodo construtor
@@ -19,7 +19,7 @@ namespace Sorveteria.MODEL
             Connect = new Connection();
             Command = new SqlCommand();
         }
-        public void Insert (Cad_produtos prod)
+        public void Insert(Cad_produtos prod)
         {
             Command.Connection = Connect.ReturnConnection();
             Command.CommandText = @"INSERT INTO CADPRODUTO VALUES (@nomeProduto, @preco, @descricao, @uniMedida)";
@@ -28,7 +28,7 @@ namespace Sorveteria.MODEL
             Command.Parameters.AddWithValue("@preco", prod.Preco);
             Command.Parameters.AddWithValue("@descricao", prod.Descricao);
             Command.Parameters.AddWithValue("@uniMedida", prod.UniMedida);
-            
+
 
             try
             {
@@ -45,22 +45,22 @@ namespace Sorveteria.MODEL
             }
         }
 
-        public void Update (Cad_produtos prod)
+        public void Update(Cad_produtos prod)
 
-        {   Command.Connection = Connect.ReturnConnection();
+        { Command.Connection = Connect.ReturnConnection();
             Command.CommandText = @"UPDATE Cad_produtos SET 
             NOMEPRODUTO = @nomeProduto, 
             PRECO= @preco,
             DESCRICAO = @descricao,
             UNIMEDIDA = @uniMedida
-            where CODPRODUTO = @code"; 
+            where CODPRODUTO = @code";
 
             Command.Parameters.AddWithValue("@code", prod.CodProduto);
             Command.Parameters.AddWithValue("@nomeProduto", prod.NomeProduto);
             Command.Parameters.AddWithValue("@preco", prod.Preco);
             Command.Parameters.AddWithValue("@descricao", prod.Descricao);
             Command.Parameters.AddWithValue("@uniMedida", prod.UniMedida);
-            
+
             try
             {
                 Command.ExecuteNonQuery();
@@ -81,7 +81,7 @@ namespace Sorveteria.MODEL
         {
             Command.Connection = Connect.ReturnConnection();
             Command.CommandText = @"DELETE FROM Cad_produtos WHERE CodProduto = @code";
-            Command.Parameters.AddWithValue("@code",CodProduto);
+            Command.Parameters.AddWithValue("@code", CodProduto);
 
             try
             {
@@ -112,7 +112,7 @@ namespace Sorveteria.MODEL
                 {
                     Cad_produtos prod = new Cad_produtos(
 
-                        (int)rd["CODPRODUTO"], 
+                        (int)rd["CODPRODUTO"],
                         (string)rd["NOMEPRODUTO"],
                         (string)rd["DESCRICAO"],
                         (float)rd["PRECO"],
@@ -133,5 +133,19 @@ namespace Sorveteria.MODEL
 
             return listaDeProdutos;
         }
+        public bool Validatecadastro(Cad_produtos prod)
+
+            Command.Connection = Connection.ReturnConnection();
+            Command.CommandText= "SELECT * FROM Cad_produtos";
+
+            Command.Parameters = AddWithValue("@codProduto", prod.CodProdutos);
+            Command.Parameters = AddWithValue("@alguma coisa", Cad_produtos.Alguma coisa);
+
+            try
+            {
+                SqlDataReader rd = SqlCommand.ExecuteReader();
+            }
+        rd.CloseConnection();
+
     }
 }

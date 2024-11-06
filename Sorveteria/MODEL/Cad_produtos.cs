@@ -29,5 +29,6 @@ namespace Sorveteria.MODEL
             Preco = preco;
             UniMedida = uniMedida;
         }
+
     }
 }
