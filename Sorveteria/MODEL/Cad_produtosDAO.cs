@@ -11,6 +11,8 @@ namespace Sorveteria.MODEL
 {
     internal class Cad_produtosDAO
     {
+        internal static object prod;
+
         private Connection Connect { get; set; }
         private SqlCommand Command { get; set; }
 
@@ -133,19 +135,6 @@ namespace Sorveteria.MODEL
 
             return listaDeProdutos;
         }
-        public bool Validatecadastro(Cad_produtos prod)
-
-            Command.Connection = Connection.ReturnConnection();
-            Command.CommandText= "SELECT * FROM Cad_produtos";
-
-            Command.Parameters = AddWithValue("@codProduto", prod.CodProdutos);
-            Command.Parameters = AddWithValue("@alguma coisa", Cad_produtos.Alguma coisa);
-
-            try
-            {
-                SqlDataReader rd = SqlCommand.ExecuteReader();
-            }
-        rd.CloseConnection();
-
+       
     }
-}
+} 

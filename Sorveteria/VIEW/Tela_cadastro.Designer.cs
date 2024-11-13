@@ -43,6 +43,12 @@
             this.lbl_estoque = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_cadastrarprod = new System.Windows.Forms.Button();
+            this.ltv_prod = new System.Windows.Forms.ListView();
+            this.clm_cod = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clm_nome = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clm_preco = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clm_desc = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clm_med = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -176,12 +182,50 @@
             this.btn_cadastrarprod.UseVisualStyleBackColor = true;
             this.btn_cadastrarprod.Click += new System.EventHandler(this.btn_cadastrarprod_Click);
             // 
+            // ltv_prod
+            // 
+            this.ltv_prod.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.clm_cod,
+            this.clm_nome,
+            this.clm_preco,
+            this.clm_desc,
+            this.clm_med});
+            this.ltv_prod.HideSelection = false;
+            this.ltv_prod.Location = new System.Drawing.Point(267, 173);
+            this.ltv_prod.Name = "ltv_prod";
+            this.ltv_prod.Size = new System.Drawing.Size(312, 237);
+            this.ltv_prod.TabIndex = 15;
+            this.ltv_prod.UseCompatibleStateImageBehavior = false;
+            this.ltv_prod.View = System.Windows.Forms.View.Details;
+            // 
+            // clm_cod
+            // 
+            this.clm_cod.Text = "cod";
+            // 
+            // clm_nome
+            // 
+            this.clm_nome.Text = "nome";
+            // 
+            // clm_preco
+            // 
+            this.clm_preco.Text = "preço";
+            // 
+            // clm_desc
+            // 
+            this.clm_desc.Text = "descrição";
+            // 
+            // clm_med
+            // 
+            this.clm_med.Text = "un. medida";
+            this.clm_med.Width = 70;
+            // 
             // Tela_cadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PapayaWhip;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.ltv_prod);
             this.Controls.Add(this.btn_cadastrarprod);
             this.Controls.Add(this.txb_estoque);
             this.Controls.Add(this.lbl_estoque);
@@ -199,6 +243,7 @@
             this.Controls.Add(this.lbl_cod);
             this.Name = "Tela_cadastro";
             this.Text = "Tela_cadastro";
+            this.Load += new System.EventHandler(this.Tela_cadastro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -222,5 +267,11 @@
         private System.Windows.Forms.TextBox txb_estoque;
         private System.Windows.Forms.Label lbl_estoque;
         private System.Windows.Forms.Button btn_cadastrarprod;
+        private System.Windows.Forms.ListView ltv_prod;
+        private System.Windows.Forms.ColumnHeader clm_cod;
+        private System.Windows.Forms.ColumnHeader clm_nome;
+        private System.Windows.Forms.ColumnHeader clm_preco;
+        private System.Windows.Forms.ColumnHeader clm_desc;
+        private System.Windows.Forms.ColumnHeader clm_med;
     }
 }
